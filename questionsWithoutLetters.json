@@ -216,7 +216,7 @@
     "AnswerExplanation": "Buffer overflows are common tactics used by hackers to get systems to execute their malicious code. They identify an application or operating system that is not performing proper bounds checking and input a large amount of data that will write over current memory segments. The data usually contains malicious code that will then be executed by the system."
   },
   {
-    "QuestionPrompt": "Paul has been asked to evaluate implementing soft tokens acrossthe enterprise. What exactly are soft tokens?",
+    "QuestionPrompt": "Paul has been asked to evaluate implementing soft tokens across the enterprise. What exactly are soft tokens?",
     "CorrectAnswer": "One-time password generators that reside in software",
     "Answer1": "One-time password generators that reside in software",
     "Answer2": "Synchronous cognitive passwords generated in software",

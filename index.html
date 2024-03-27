@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script src="quiz.js" defer></script>
-    <style>
+    <head>
+        <script src="quiz.js" defer></script>
+        <style>
         
         body {
             font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
@@ -30,44 +30,71 @@
             display: inline;
         }
         .element {
-            max-width: 500px;
-            height:75px;
+            max-width: 550px;
             background-color: rgb(60,60,60);
             padding:15px;
-        }
-        .element:hover {
-            background-color: rgb(85,85,85);
+            cursor: pointer;
         }
         #container {
             max-width: 600px;
             background-color: rgb(45,45,45);
             padding: 15px;
         }
+        #submitButton
+        {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(50,50,50);
+            color: rgb(200,200,200);
+        }
+        #submitButton:hover
+        {
+            background-color: rgb(100,100,100);
+            color: rgb(255,255,255);
+        }
+        #nextButton
+        {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(50,50,50);
+            color: rgb(200,200,200);
+        }
+        #nextButton:hover
+        {
+            background-color: rgb(100,100,100);
+            color: rgb(255,255,255);
+        }
+        #buttonContainer
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .spacer {
+            flex-grow: 1;
+        }
     </style>
-</head>
-<body>
-    <h1>CSS 310: Introduction to Cybersecurity</h1>
-    <p id="question">Sample question</p>
-    <form id="quizForm">
-        <input type="radio" id="option1" name="questionAnswer" value="Option1">
-        <label for="option1">Option1</label><br>
-        <input type="radio" id="option2" name="questionAnswer" value="Option2">
-        <label for="option2">Option2</label><br>
-        <input type="radio" id="option3" name="questionAnswer" value="Option3">
-        <label for="option3">Option3</label><br>
-        <input type="radio" id="option4" name="questionAnswer" value="Option4">
-        <label for="option4">Option4</label><br>
+    </head>
+    <body>
+        <h1>CSS 310: Introduction to Cybersecurity</h1>
+        <p id="question">Sample question</p>
+        <div id="container">
+            <div class="element" id="option1" name="questionAnswer">Option 1</div>
+            <div class="element" id="option2" name="questionAnswer">Option 2</div>
+            <div class="element" id="option3" name="questionAnswer">Option 3</div>
+            <div class="element" id="option4" name="questionAnswer">Option 4</div>
+        </div>
+        <p id="correctAnswerParagraph">Correct answer</p>
+        <p id="description">Answer description</p>
         <br>
-        <input type="submit" value="Submit" id="submitButton">
-    </form>
-    <div id="container">
-        <div class="element">Option 1</div>
-        <div class="element">Option 2</div>
-        <div class="element">Option 3</div>
-        <div class="element">Option 4</div>
-    </div>
-    <p id="correctAnswerParagraph">Correct answer</p>
-    <p id="description">Answer description</p>
-    <input type="submit" value="Next" id="nextButton"></button>
-</body>
+        <div id="buttonContainer">
+            <button id="submitButton">Check answer</button>
+            <div class="spacer"></div>
+            <button id="nextButton">Next</button>
+        </div>
+
+    </body>
 </html>
