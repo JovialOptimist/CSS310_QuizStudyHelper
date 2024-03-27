@@ -45,10 +45,14 @@ function displayQuestion() {
     document.getElementById('option2').checked = false;
     document.getElementById('option3').checked = false;
     document.getElementById('option4').checked = false;
+
+    document.getElementById('submitButton').style.visibility = true;
 }
 
 document.getElementById('quizForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission behavior
+    document.getElementById('submitButton').style.visibility = false;
+
     const selectedOption = document.querySelector('input[name="questionAnswer"]:checked');
     if (selectedOption) {
         const selectedValue = selectedOption.nextElementSibling.textContent;
