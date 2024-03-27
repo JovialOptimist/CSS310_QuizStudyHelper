@@ -99,7 +99,7 @@
     "AnswerExplanation": "The GDPR defines personal data as “…any information that relates to an identified or identifiable living individual. Different pieces of information, which collected together can lead to the identification of a particular person, also constitute personal data.” The protection of personal data under the GDPR not only encompasses the U.S. equivalent protections of personally identifiable information (PII) under the Privacy Act and protected health information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA), but also extends to such information as political opinions and web cookie IDs, which is information that is not considered private in the United States or elsewhere outside the EU."
   },
   {
-    "QuestionPrompt": "Which of the following has/have an incorrect definition?i. Foreign key: An attribute of one table that is related to the cell of another tableii. Cell: An intersection of a row and columniii. Schema: Defines the structure of the databaseiv. Data dictionary: Central repository of data elements and their relationships",
+    "QuestionPrompt": "Which of the following has/have an incorrect definition?\ni. Foreign key: An attribute of one table that is related to the cell of another table\nii. Cell: An intersection of a row and column\niii. Schema: Defines the structure of the database\niv. Data dictionary: Central repository of data elements and their relationships",
     "CorrectAnswer": "i",
     "Answer1": "i",
     "Answer2": "i, ii, ii",
@@ -678,8 +678,8 @@
     "QuestionPrompt": "What is the Network Time Protocol (NTP), and why is it important in security assessments?",
     "CorrectAnswer": "It is a client/server protocol for system time synchronization, and it is important to ensure that system logs have timestamps that are consistent across all critical systems.",
     "Answer1": "It is a peer-to-peer protocol for system time synchronization, and it is important to ensure that peer systems’ time-based authentication functions properly.",
-    "Answer2": "It is a client/server protocol for system time synchronization, and it is important to ensure that",
-    "Answer3": "r systems’ time-based authentication functions properly. C) It is a peer-to-peer protocol for system time synchronization, and it is important to ensure that system logs have timestamps that are consistent across all critical systems.",
+    "Answer2": "It is a client/server protocol for system time synchronization, and it is important to ensure that peer systems’ time-based authentication functions properly.",
+    "Answer3": "It is a peer-to-peer protocol for system time synchronization, and it is important to ensure that system logs have timestamps that are consistent across all critical systems.",
     "Answer4": "It is a client/server protocol for system time synchronization, and it is important to ensure that system logs have timestamps that are consistent across all critical systems.",
     "AnswerExplanation": "NTP provides a hierarchical architecture for client/server time synchronization, which is critical to ensure that logging activities performed by multiple disparate systems provide records with consistent timestamps. This is especially important when investigating incidents involving activities across multiple systems."
   },

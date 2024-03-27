@@ -25,6 +25,11 @@ function shuffle(array) {
 }
 
 function displayQuestion() {
+    option1.style.color = 'rgb(255, 255, 255)';
+    option2.style.color = 'rgb(255, 255, 255)';
+    option3.style.color = 'rgb(255, 255, 255)';
+    option4.style.color = 'rgb(255, 255, 255)';
+    
     document.getElementById("option1").style.backgroundColor = 'rgb(60,60,60)';
     document.getElementById("option2").style.backgroundColor = 'rgb(60,60,60)';
     document.getElementById("option3").style.backgroundColor = 'rgb(60,60,60)';
@@ -45,16 +50,36 @@ function displayQuestion() {
     op4Clicked = false;
     
     document.getElementById('question').textContent = questions[questionIndex].QuestionPrompt;
-    document.getElementById('option1').textContent = questions[questionIndex].Answer1;
-    document.getElementById('option2').textContent = questions[questionIndex].Answer2;
-    document.getElementById('option3').textContent = questions[questionIndex].Answer3;
-    document.getElementById('option4').textContent = questions[questionIndex].Answer4;
+
+    questionAnswers = new Array(questions[questionIndex].Answer1, 
+        questions[questionIndex].Answer2, questions[questionIndex].Answer3, questions[questionIndex].Answer4);
+    shuffle(questionAnswers);
+    document.getElementById('option1').textContent = questionAnswers[0];
+    document.getElementById('option2').textContent = questionAnswers[1];
+    document.getElementById('option3').textContent = questionAnswers[2];
+    document.getElementById('option4').textContent = questionAnswers[3];
     document.getElementById('correctAnswerParagraph').textContent = "";
     document.getElementById('description').textContent = "";
 }
 
+document.getElementById("previousButton").addEventListener('click', function() {
+    if (questionIndex > 0)
+    {
+        questionIndex--;
+        displayQuestion();
+        document.getElementById("correctAnswerParagraph").textContent = "The correct answer is '" + questions[questionIndex].CorrectAnswer + "'";
+        document.getElementById("description").textContent = questions[questionIndex].AnswerExplanation;
+    }
+});
+
 document.getElementById("submitButton").addEventListener('click', function() {
+    
     const selectedOption = document.querySelector('div[name="questionAnswer"][style*="background-color: rgb(100, 100, 100)"]');
+    option1.style.color = 'rgb(255, 255, 255)';
+    option2.style.color = 'rgb(255, 255, 255)';
+    option3.style.color = 'rgb(255, 255, 255)';
+    option4.style.color = 'rgb(255, 255, 255)';
+
     if (selectedOption) {
         const selectedValue = selectedOption.textContent;
         console.log('Selected answer:', selectedValue);
@@ -62,11 +87,61 @@ document.getElementById("submitButton").addEventListener('click', function() {
         {
             document.getElementById("correctAnswerParagraph").textContent = "Good job! The correct answer is '" + questions[questionIndex].CorrectAnswer + "'";
             document.getElementById("description").textContent = questions[questionIndex].AnswerExplanation;
+            if (option1.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option1.style.color = 'rgb(14, 196, 14)';
+            }
+            else if (option2.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option2.style.color = 'rgb(14, 196, 14)';
+            }
+            else if (option3.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option3.style.color = 'rgb(14, 196, 14)';
+            }
+            else if (option4.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option4.style.color = 'rgb(14, 196, 14)';
+            }
         }
         else
         {
             document.getElementById("correctAnswerParagraph").textContent = "The correct answer is '" + questions[questionIndex].CorrectAnswer + "'";
             document.getElementById("description").textContent = questions[questionIndex].AnswerExplanation;
+
+            if (option1.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option1.style.color = 'rgb(14, 196, 14)';
+            }
+            else if (option2.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option2.style.color = 'rgb(14, 196, 14)';
+            }
+            else if (option3.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option3.style.color = 'rgb(14, 196, 14)';
+            }
+            else if (option4.textContent === questions[questionIndex].CorrectAnswer)
+            {
+                option4.style.color = 'rgb(14, 196, 14)';
+            }
+
+            if (option1.textContent === selectedValue)
+            {
+                option1.style.color = 'rgb(199, 72, 72)';
+            }
+            else if (option2.textContent === selectedValue)
+            {
+                option2.style.color = 'rgb(199, 72, 72)';
+            }
+            else if (option3.textContent === selectedValue)
+            {
+                option3.style.color = 'rgb(199, 72, 72)';
+            }
+            else if (option4.textContent === selectedValue)
+            {
+                option4.style.color = 'rgb(199, 72, 72)';
+            }
         }
     } else {
         console.log('Please select an answer.');
@@ -76,6 +151,34 @@ document.getElementById("submitButton").addEventListener('click', function() {
 document.getElementById("nextButton").addEventListener('click', function(event) {
     questionIndex++;
     displayQuestion();
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "1") {
+        option1.click();
+    }
+    else if (event.key === "2")
+    {
+        option2.click();
+    }
+    else if (event.key === "3")
+    {
+        option3.click();
+    }
+    else if (event.key === "4")
+    {
+        option4.click();
+    }
+    else if (event.key === "Enter") {
+        if ((op1Clicked || op2Clicked || op3Clicked || op4Clicked) && !document.getElementById("description").textContent != "")
+        {
+            document.getElementById("submitButton").click();
+        }
+        else
+        {
+            document.getElementById("nextButton").click();
+        }
+    }
 });
 
 // Load quiz questions when the page loads
